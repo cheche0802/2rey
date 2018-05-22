@@ -8,7 +8,7 @@ class History extends Model
 {
 
  protected $fillable = [
-   'date', 'cost','sell', 'product_id',
+   'date', 'cost','sell', 'product_id', 'moviment_id',
  ];
 
  public function products()
@@ -18,6 +18,6 @@ class History extends Model
 
  public function moviments()
  {
-   return $this->belongsTo(Moviment::class);
+   return $this->hasMany(Moviment::class);
  }
 }

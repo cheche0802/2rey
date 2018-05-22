@@ -16,7 +16,7 @@
                         Nuevo Producto
                     </a>
 
-              
+
                 </div>
 
                 <div class="panel-body">
@@ -24,17 +24,25 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Direccion </th>
+                                <th>Código</th>
+                                <th>Status </th>
+                                <th>Fecha </th>
+                                <th>Descripcion </th>
+                                <th>Costo </th>
+                                <th>Venta </th>
+
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($moviments as $moviment)
                             <tr>
-                                <td>{{ $moviment->id }}</td>
-                                <td>{{ $moviment->name }}</td>
-                                <td>{{ $moviment->address }}</td>
+                                <td>{{ $moviment->code }}</td>
+                                <td>{{ $moviment->status }}</td>
+                                <td>{{ $moviment->date }}</td>
+                                <td>{{ $moviment->description }}</td>
+                                <td>{{ $moviment->cost }}</td>
+                                <td>{{ $moviment->sell }}</td>
                                 <td width="10px">
                                     <a href="{{ route('moviments.show', $moviment->id) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>

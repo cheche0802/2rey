@@ -13,7 +13,7 @@ class DetailsTableSeeder extends Seeder
     {
           factory(App\Detail::class, 100)->create()->each(function (App\Detail $detail){
             $detail->category()->attach([
-              rand(1,100),
+              rand(1,20),
             ]);
           });
       }

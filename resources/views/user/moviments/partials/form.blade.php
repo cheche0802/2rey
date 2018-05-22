@@ -7,10 +7,10 @@
 
 
 <div class="form-group">
-    {{ Form::label('status', 'Entrada') }}
-    {{ Form::radio('status', null, ['class' => 'form-control']) }}
-    {{ Form::label('status', 'Salida') }}
-    {{ Form::radio('status', null, ['class' => 'form-control']) }}
+    {{ Form::label('Entrada', 'Entrada') }}
+    {{ Form::radio('Salida',  null, ['class' => 'form-control']) }}
+    {{ Form::label('Salida', 'Salida') }}
+    {{ Form::radio('Entrada', null, ['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
@@ -21,6 +21,10 @@
 <div class="form-group">
     {{ Form::label('description', 'Descripcion') }}
     {{ Form::textarea('description', null, ['class' => 'form-control']) }}
+</div>
+<div class="form-group">
+    {{ Form::label('amount', 'Cantidad') }}
+    {{ Form::number('amount', null, ['class' => 'form-control', 'id' => 'datepicker']) }}
 </div>
 
 <table class="table table-striped">

@@ -46,7 +46,7 @@
                                 <td>{{ $history->date }}</td>
                                 <td>{{ $history->cost }}</td>
                                 <td>{{ $history->sell }}</td>
-                                @can ('histories.show'
+                                @can ('histories.show')
                                   <td width="10px">
                                       <a href="{{ route('histories.show', $history->id) }}" class="btn btn-sm btn-default">Ver</a>
                                   </td>

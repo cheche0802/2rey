@@ -56,27 +56,33 @@ class MovimentController extends Controller
      */
     public function store(Request $request)
     {
-    //  dd($request->all());
+
       $moviment = Moviment::create($request->all());
 
-        
-      /*  if ($moviment->status == "Entrada") {
-          History::create([
-            'cost' => $request->cost,
-            'sell' => null(),
-          ]);
-         Product::update([
-            'amount' = 'amount' + $moviments->cantidad,
-          ]);
-        } else {
-          History::create([
-            'sell' =>  $request->sell,
-          ]);
-         Product::update([
-            'amount' = 'amount' - $moviments->cantidad,
-          ]);
+
+       if ($moviment->status == "Entrada") {
+        $history = new History;
+        $history->product_id = $request->product_id;
+        $history->date = $request->date;
+        $history->cost = $request->cost;
+        $history->sell = null;
+        $history->moviment_id = $moviment->id;
+        $history->save();
+
+          $product  = new Product;
+          $product = $request->product_id;
+         $product->amount = $product->amount + $moviment->amount;
+          $product->save();
+        } else if ($moviment->status == "Salida") {
+            $history= new History;
+            $history->sell =  $request->sell;
+            $history->save();
+
+          $product = new Product;
+          $product->amount = $product->amount - $moviment->amount;
+          $product->save();
         }
-        */
+
 
       return redirect()->route('moviments.edit', $moviment->id)->with('info', 'Moviemiento creada con éxito');
     }
