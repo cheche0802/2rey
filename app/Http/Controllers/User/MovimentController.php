@@ -58,6 +58,7 @@ class MovimentController extends Controller
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     	//dd($request->all());
       	$moviment = Moviment::create($request->all());
       	
@@ -90,6 +91,10 @@ class MovimentController extends Controller
 =======
       $moviment = Moviment::create($request->all());
 
+=======
+      $moviment = Moviment::create($request->all());
+
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
 
        if ($moviment->status == "Entrada") {
         $history = new History;

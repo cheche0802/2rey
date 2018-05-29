@@ -21,7 +21,12 @@ class CreateMovimentsTable extends Migration
             $table->text('description');
             $table->integer('amount');
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->double('price');
+=======
+            $table->integer('cost');
+            $table->integer('sell');
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
 =======
             $table->integer('cost');
             $table->integer('sell');

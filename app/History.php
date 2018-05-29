@@ -9,7 +9,11 @@ class History extends Model
 
  protected $fillable = [
 <<<<<<< HEAD
+<<<<<<< HEAD
    'type','price', 'product_id',
+=======
+   'date', 'cost','sell', 'product_id', 'moviment_id',
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
 =======
    'date', 'cost','sell', 'product_id', 'moviment_id',
 >>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123

@@ -16,11 +16,14 @@ class CreateHistoriesTable extends Migration
         Schema::create('histories', function (Blueprint $table) {
           $table->increments('id');
 <<<<<<< HEAD
+<<<<<<< HEAD
           $table->string('type');
           $table->double('price');
           $table->integer('product_id')->unsigned();
           $table->foreign('product_id')->references('id')->on('products');
 =======
+=======
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
           $table->decimal('cost');
           $table->decimal('sell');
           $table->datetime('date');
@@ -28,6 +31,9 @@ class CreateHistoriesTable extends Migration
           $table->integer('moviment_id')->unsigned();
           $table->foreign('product_id')->references('id')->on('products');
           $table->foreign('moviment_id')->references('id')->on('moviments');
+<<<<<<< HEAD
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
+=======
 >>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
           $table->timestamps();
         });

@@ -33,8 +33,13 @@
 
       <div class="form-group">
 <<<<<<< HEAD
+<<<<<<< HEAD
           {{ Form::label('price', 'Costo') }}
           {{ Form::number('price', null, ['class' => 'form-control',]) }}
+=======
+          {{ Form::label('cost', 'Costo') }}
+          {{ Form::number('cost', null, ['class' => 'form-control',]) }}
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
 =======
           {{ Form::label('cost', 'Costo') }}
           {{ Form::number('cost', null, ['class' => 'form-control',]) }}
