@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Event' => [
-            'App\Listeners\EventListener',
+        'App\Events\Transccion' => [
+            'App\Listeners\SendTranscionNotification',
         ],
     ];
 
@@ -27,6 +27,8 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Event::listen('event.transcion', function ($transcion, array $data) {
+
+        });
     }
 }

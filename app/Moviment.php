@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Moviment extends Model
 {
   protected $fillable = [
-    'status','date','description','amount', 'user_id','product_id','history_id',
+<<<<<<< HEAD
+  'code', 'status','description','amount', 'price', 'user_id','product_id'
+=======
+  'code', 'status','date','description','amount', 'cost','sell', 'user_id','product_id'
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
   ];
 
   public function users()
@@ -22,7 +26,7 @@ class Moviment extends Model
 
   public function histories()
   {
-    return $this->hasMany(History::class);
+    return $this->belongsTo(History::class);
   }
 
   public function reports()

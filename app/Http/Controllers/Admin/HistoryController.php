@@ -8,6 +8,7 @@ use App\Http\Requests\HistoryStoreRequest;
 use App\Http\Requests\HistoryUpdateRequest;
 use App\History;
 use App\Product;
+use App\Moviment;
 
 class HistoryController extends Controller
 {
@@ -40,8 +41,9 @@ class HistoryController extends Controller
           public function create()
           {
               $products = Product::orderBy('name', 'ASC')->pluck('name', 'id');
+              $moviments = Moviment::orderBy('code', 'ASC')->pluck('code', 'id');
 
-              return view('admin.histories.create', compact('products'));
+              return view('admin.histories.create', compact('products', 'moviments'));
           }
 
           /**

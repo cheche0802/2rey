@@ -56,29 +56,67 @@ class MovimentController extends Controller
      */
     public function store(Request $request)
     {
-    //  dd($request->all());
-      $moviment = Moviment::create($request->all());
+
+<<<<<<< HEAD
+    	//dd($request->all());
+      	$moviment = Moviment::create($request->all());
+      	
+      	if($request->status == "Entrada"){
+      		$product = Product::whereId($request->product_id)->firstOrFail();
+
+      		$product->amount = $product->amount + $request->amount;
+      		$product->save();
+      	}
+
+      	if($request->status == "Salida"){
+      		$product = Product::whereId($request->product_id)->firstOrFail();
+
+      		$product->amount = $product->amount - $request->amount;
+      		$product->save();
+      	}
 
         
-      /*  if ($moviment->status == "Entrada") {
-          History::create([
-            'cost' => $request->cost,
-            'sell' => null(),
-          ]);
-         Product::update([
-            'amount' = 'amount' + $moviments->cantidad,
-          ]);
-        } else {
-          History::create([
-            'sell' =>  $request->sell,
-          ]);
-         Product::update([
-            'amount' = 'amount' - $moviments->cantidad,
-          ]);
+
+
+        $history = new History;
+        $history->type = $request->status;
+        $history->price = $request->price;
+        $history->product_id = $request->product_id;
+        $history->save();
+
+
+
+      //return redirect()->route('moviments.edit', $moviment->id)->with('info', 'Moviemiento creada con éxito');
+=======
+      $moviment = Moviment::create($request->all());
+
+
+       if ($moviment->status == "Entrada") {
+        $history = new History;
+        $history->product_id = $request->product_id;
+        $history->date = $request->date;
+        $history->cost = $request->cost;
+        $history->sell = null;
+        $history->moviment_id = $moviment->id;
+        $history->save();
+
+          $product  = new Product;
+          $product = $request->product_id;
+         $product->amount = $product->amount + $moviment->amount;
+          $product->save();
+        } else if ($moviment->status == "Salida") {
+            $history= new History;
+            $history->sell =  $request->sell;
+            $history->save();
+
+          $product = new Product;
+          $product->amount = $product->amount - $moviment->amount;
+          $product->save();
         }
-        */
+
 
       return redirect()->route('moviments.edit', $moviment->id)->with('info', 'Moviemiento creada con éxito');
+>>>>>>> 8a81a8df7e9d2f01845f27b5e461d6982917b123
     }
 
     /**

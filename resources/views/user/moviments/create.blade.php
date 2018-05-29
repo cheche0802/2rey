@@ -12,7 +12,7 @@
                 <div class="panel-body">
                     {!! Form::open(['route' => 'moviments.store']) !!}
 
-                        @include('user.moviments.partials.form')
+                        @include('user.moviments.partials.form1')
 
                     {!! Form::close() !!}
                 </div>

@@ -1,3 +1,8 @@
+<div>
+  {{ Form::label('moviment_id', 'Movimiento') }}
+  {{ Form::select('moviment_id', $moviments, null, ['']) }}
+</div>
+
 <div class="form-group">
   {{ Form::label('product_id', 'Producto') }}
   {{ Form::select('product_id', $products, null, ['']) }}
