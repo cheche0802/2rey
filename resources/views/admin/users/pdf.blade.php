@@ -15,7 +15,7 @@
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th> cedula</th>
+                                    <th> Cedula</th>
                                     <th> Nombre</th>
                                     <th> Apellido</th>
                                     <th> Correo</th>

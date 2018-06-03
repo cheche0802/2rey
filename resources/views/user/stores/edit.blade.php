@@ -7,6 +7,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Editar Almacen
+                    @can ('stores.index')
+                      <a href="{{ route('stores.index') }}" class="pull-right btn btn-sm btn-primary">
+                          Inicio
+                      </a>
+                    @endcan
                 </div>
 
                 <div class="panel-body">

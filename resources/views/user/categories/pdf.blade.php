@@ -8,7 +8,11 @@
                     <div class="card-body">
                         <h5 class="card-title">Category</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ Auth::user()->name }}</h6>
-
+                        @can ('categories.index')
+                          <a href="{{ route('categories.index') }}" class="pull-right btn btn-sm btn-primary">
+                              Inicio
+                          </a>
+                        @endcan
                         <p class="card-text">
                             Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>

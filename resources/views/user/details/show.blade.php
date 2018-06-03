@@ -7,6 +7,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Ver Detalle
+                    @can ('details.index')
+                      <a href="{{ route('details.index') }}" class="pull-right btn btn-sm btn-primary">
+                          Inicio
+                      </a>
+                    @endcan
                 </div>
 
                 <div class="panel-body">
